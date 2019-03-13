@@ -1,32 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  background-color: rgb(14, 13, 13);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-image: url('./img/studio.jpg');
+  background-size: cover;
+  background-position: top;
+} 
+
+.landing-background {
+    background-color: rgb(14, 13, 13);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(119, 119, 119, 0.075), rgba(0, 0, 0, 0.877)),url('./img/studio.jpg');
+    background-size: cover;
+    background-position: top;
+    text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-primary {
+  position: relative;
+  color: white;
+  background-color: transparent;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.nav-primary a:visited {
+  padding: 1vw;
+  font-size: 1.5vw;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-primary a {
+  padding: 1vw;
+  font-size: 1.5vw;
+  color: white;
+  text-decoration: none;
+}
+
+.calendar {
+  margin: 0 auto;
+  margin-top: 12vh;
+  width: 24vw;
+  /* box-shadow: 10px 10px 70px rgb(31, 30, 30); */
+
+  animation: moveLeft 1s ease-out;
+  
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 2vw;
+  padding: 1vw;
+  margin-top: -4vh;
+}
+#form-h1 {
+  color: rgb(48, 47, 47);
+}
+.calendar-form {
+  margin: 0 auto;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  width: 24vw;
+  margin-top: 10vh;
+  color: white;
+  /* border: 2px solid white; */
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5vw;
+}
+
+/* .calendar-form input {
+  margin: 1vw;
+  text-align: center;
+} */
+
+@keyframes moveLeft {
+  0% {
+    margin-top: -50vh;
+  }
+
+  50% {
+    margin-top: 15vh;
+  }
+
+  75% {
+    margin-top: 7vh;
+  }
+  
+  100% {
+    margin-top: 12vh;
+  }
+}
+
+.calendar-button-div {
+  
+  display: inline-block;
+}
+
+.calendar-button {
+  margin: 1vw;
+  width: 17vw;
+  height: 5vh;
+  border-radius: 1rem;
+  font-size: 1vw;
+  background-color: rgb(246, 242, 242);
+  margin-top: 5vh;
+  
+}
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: red;
+}
+
+.landingPage-heading {
+  font-size: 8vw;
+  margin-top: 24vh;
+  font-family: 'Economica', sans-serif;
+  text-shadow: 2px 2px 50px gray;
+}
+
+.landing-button {
+  margin: 0 auto;
+  display: block;
+  width: 15vw;
+  height: 7vh;
+  margin-top: 14vh;
+  border-radius: 5vw;
+  font-size: 1.3vw;
+}
+
+
+.landing-button {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 5vw;
+  margin-top: 14vh;
+}
+
+.form-container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100vw;
+  height: 100vh;
+}
+
+.form {
+  position: relative;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  text-align: center;
+  background-color: white;
+  width: 35vw;
+  padding: 4vw;
+  box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.212);
+  border-radius: .2vw;
+  
+  
+}
+.form-input {
+  margin: 1vw;
+  width: 17vw;
+  height: 5vh;
+  padding: 1vw;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  color: black;
+  font-size: 1.2vw;
+}
+
+input:focus {outline:none;}
+
+::placeholder {
+  color: rgb(48, 47, 47);
+  font-size: 1.2vw;
+}
+
+.x-button {
+  position: relative;
+  float: right;
+  font-size: 1.8vw;
+  color:black;
+  background-color: transparent;
+  border: none;
+  margin-top: -5vh;
+  
+  
+  
+}
+
+.logout-button {
+  display: block;
+  margin-left: 94vw;
+  border: none;
+  background-color: transparent;
   color: white;
+  font-size: 1vw;
+  padding: .8vw;
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+.clock {
+  background: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#error-message {
+  color: red;
+  /* border: 2px solid; */
+  width: 15vw;
+  text-align: center;
+  margin: 0 auto;
+  animation-name: flashing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+button {
+  outline: none;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
+
+.checkbox-container {
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: scroll;
+  /* height: 15vh; */
+}
+
+/* Checkbox */
+
