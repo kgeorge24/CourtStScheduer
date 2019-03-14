@@ -226,19 +226,29 @@ export default class Booking extends Component {
     render(){
         return(
             <div className="form-container">
-            <div className="form">
-                <button className="x-button" onClick={this.userPressedXButton}>X</button>
-                <h1 id="form-h1">Booking for {this.props.location.state.day}</h1>
+            <div className="booking-form">
+                <button className="x-button" onClick={this.userPressedXButton}>x</button>
+                <div className='heading'>
+                    <h1>Booking for {this.props.location.state.day}</h1>
+                </div>
                 <form onSubmit={this.submitHandler}>
-                    From
+                <div className='time-frame'>
+                    From:  &nbsp;
                     <select name="start" onChange={this.changeHandler}>
                     {this.availableBookingTimes()}
                     </select>
-                    To
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    To:  &nbsp;
                     <select name="finish" onChange={this.changeHandler}>
                     {this.availableBookingTimes()}
                     </select>
+                </div>
+                <div className='booking-button-area'>
+                    <p>A Deposit of $12 is Required</p>
                     <button className="calendar-button">Book</button>
+                </div>
                 </form>
             </div>
             </div>

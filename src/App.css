@@ -58,7 +58,7 @@
   
 }
 
-h1 {
+.h1 {
   color: white;
   text-align: center;
   font-family: 'Catamaran', sans-serif;
@@ -66,6 +66,7 @@ h1 {
   padding: 1vw;
   margin-top: -4vh;
 }
+
 #form-h1 {
   color: rgb(48, 47, 47);
 }
@@ -194,6 +195,20 @@ a:visited {
   font-size: 1.2vw;
 }
 
+.booking-form {
+  background-color: white;
+  height: 35vh;
+  width: 30vw;
+  border-radius: .2vw;
+}
+
+.heading {
+  display: block;
+  font-size: 1vw;
+  clear: both;
+  text-align: center;
+}
+
 input:focus {outline:none;}
 
 ::placeholder {
@@ -202,16 +217,27 @@ input:focus {outline:none;}
 }
 
 .x-button {
-  position: relative;
+  /* border: 1px solid grey; */
   float: right;
-  font-size: 1.8vw;
+  font-size: 1.2vw;
   color:black;
+  padding: .4vw;
+
   background-color: transparent;
-  border: none;
-  margin-top: -5vh;
   
-  
-  
+}
+
+.time-frame {
+  /* border: 2px solid black; */
+  text-align: center;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-button-area {
+  text-align: center;
 }
 
 .logout-button {

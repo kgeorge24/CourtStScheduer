@@ -25,13 +25,13 @@ export default class Schedule extends Component {
         return (this.state.clicked === true ? <Form day={this.state.day} user={this.props.user} /> : null)
     }
 
-    protection() {
+    showCalendarIfLoggedIn() {
         let token = localStorage.getItem('token')
         
         if(token){
             return <div>
                 <Nav />
-                <h1>Court St Schedule</h1>
+                <h1 class="h1">Court St Schedule</h1>
             <div className="calendar">
                 <Calendar className="styleCal" onClickDay={this.dayClicked}/>   
                 {this.showForm()}
@@ -47,7 +47,7 @@ export default class Schedule extends Component {
     render(){
         return(
             <div>
-                {this.protection()}
+                {this.showCalendarIfLoggedIn()}
             </div>
         )
     }
