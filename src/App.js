@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage';
 import Login from './components/Login';
 import Register from './components/Register';
 import { withRouter } from 'react-router-dom'
+import BookingHistory from './components/BookingHistory';
 
 
 class App extends Component {
@@ -102,6 +103,7 @@ class App extends Component {
          <Route path="/register" render={() => (<Register submitHandler={this.submitHandler}/>)}/>
          <Route path="/calendar" render={() => (<Schedule user={this.state.user}/>)} />
          <Route path="/booking" component={Booking}/>
+         <Route path="/booking-history" component={BookingHistory}/>
        </Switch>
        </div>
     );

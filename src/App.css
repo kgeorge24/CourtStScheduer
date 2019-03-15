@@ -23,6 +23,7 @@
     background-size: cover;
     background-position: top;
     text-align: center;
+    color: white;
 }
 
 .nav-primary {
@@ -209,6 +210,39 @@ a:visited {
   text-align: center;
 }
 
+.booking-history-heading {
+  color: white;
+  text-align: center;
+  padding: 3vw;
+  border-bottom: 2px solid rgb(214, 213, 213);
+  line-height: 2.0;
+}
+
+.booking-history-card {
+  height: 10vh;
+  width: 38vw;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-section {
+  border: 2px solid black;
+}
+
+.status-section {
+  position: absolute;
+
+}
+
+.booking-history-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 90vh;
+  padding: 3vw;
+}
 input:focus {outline:none;}
 
 ::placeholder {
