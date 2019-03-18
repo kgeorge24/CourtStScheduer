@@ -220,20 +220,53 @@ a:visited {
 
 .booking-history-card {
   height: 10vh;
-  width: 38vw;
+  width: 32vw;
   background-color: white;
+}
+
+.date-section {
+  /* border: 2px solid black; */
+  width: 5vw;
+  height: 10vh;
+  float: right;
+  text-align: center;
+}
+
+.date-section h2 {
+  margin-top: 2vh;
+}
+
+.date-section p {
+  margin-top: -2vh;
+  font-size: 1vw
+}
+
+.time-section {
+  /* border: 2px solid black; */
+  width: 22vw;
+  height: 10vh;
+  float: right;
+  /* text-align: center; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.date-section {
-  border: 2px solid black;
+.status-section {
+  /* border: 2px solid black; */
+  width: 5vw;
+  height: 10vh;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .8vw;
+  color: green;
 }
 
-.status-section {
-  position: absolute;
-
+.red {
+  color: red;
+  font-size: .9vw;
 }
 
 .booking-history-page {

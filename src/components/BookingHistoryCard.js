@@ -9,12 +9,19 @@ export default class BookingHistoryCard extends Component {
                 </div>
 
                 <div className='date-section'>
-                <p>Thursday Jan 22 2019 1pm - 3pm</p>
+                    <h2>22</h2>
+                    <br></br>
+                    <p>Jan</p>
+                </div>
+
+                <div className='time-section'>
+                    <p>1pm - 3pm<span className='red'>(2hrs)</span></p>
                 </div>
 
                 <div className='status-section'>
-                <p>Completed</p>
+                    <p>Completed</p>
                 </div>
+
             </div>
         );
     }
