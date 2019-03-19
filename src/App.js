@@ -103,7 +103,7 @@ class App extends Component {
          <Route path="/register" render={() => (<Register submitHandler={this.submitHandler}/>)}/>
          <Route path="/calendar" render={() => (<Schedule user={this.state.user}/>)} />
          <Route path="/booking" component={Booking}/>
-         <Route path="/booking-history" component={BookingHistory}/>
+         <Route path="/booking-history" render={() => (<BookingHistory user={this.state.user}/>)} />
        </Switch>
        </div>
     );

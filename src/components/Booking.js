@@ -15,7 +15,7 @@ export default class Booking extends Component {
         fetch('http://localhost:3000/day', {
             headers: {
                 'Content-Type': "application/json",
-                Accept: "application/json",
+                'Accepts': "application/json",
                 'Authorization': token
             }
         }).then( res => res.json())

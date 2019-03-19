@@ -218,10 +218,18 @@ a:visited {
   line-height: 2.0;
 }
 
+.booking-history-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
 .booking-history-card {
   height: 10vh;
   width: 32vw;
   background-color: white;
+  margin: 2vw;
 }
 
 .date-section {
@@ -246,10 +254,10 @@ a:visited {
   width: 22vw;
   height: 10vh;
   float: right;
-  /* text-align: center; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+
 }
 
 .status-section {
@@ -257,9 +265,9 @@ a:visited {
   width: 5vw;
   height: 10vh;
   float: right;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
   font-size: .8vw;
   color: green;
 }
@@ -269,13 +277,7 @@ a:visited {
   font-size: .9vw;
 }
 
-.booking-history-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 90vh;
-  padding: 3vw;
-}
+
 input:focus {outline:none;}
 
 ::placeholder {
