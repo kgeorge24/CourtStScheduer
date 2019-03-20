@@ -371,6 +371,7 @@ button {
   color: black;
   margin: 1vw;
   text-decoration: none;
+  outline: none;
 }
 /* Position and sizing of burger button */
 .bm-burger-button {

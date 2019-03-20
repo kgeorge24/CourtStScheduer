@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 export default class BookingHistoryCard extends Component {
     render() {
+        let date = this.props.booking.date.split(' ')
+        let time = this.props.booking.time.split(' ')
         return(
             <div className="booking-history-card">
                 <div className='action-button'>
@@ -9,13 +11,13 @@ export default class BookingHistoryCard extends Component {
                 </div>
 
                 <div className='date-section'>
-                    <h2>22</h2>
+                    <h2>{date[2]}</h2>
                     <br></br>
-                    <p>Jan</p>
+                    <p>{date[1]}</p>
                 </div>
 
                 <div className='time-section'>
-                    <p>1pm - 3pm<span className='red'>(2hrs)</span></p>
+                    <p>{time[0]} - {time[2]}</p>
                 </div>
 
                 <div className='status-section'>

@@ -107,7 +107,7 @@ class App extends Component {
        <Menu>
         <a id="home" className="menu-item" href="/calendar">Calendar</a>
         <a id="about" className="menu-item" href="/booking-history">Booking History</a>
-        <a className="menu-item" onClick={this.clickHandler}>Logout</a>
+        <a className="menu-item" href='/' onClick={this.clickHandler}>Logout</a>
        </Menu>
        <Switch>
          <Route exact path="/" component={LandingPage} />

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 import Form from './Form'
-import Nav from './Nav'
 
 export default class Schedule extends Component {
     state = {
@@ -33,7 +32,7 @@ export default class Schedule extends Component {
                 <br></br>
                 <br></br>
                 <br></br>
-                <h1 class="h1">Court St Schedule</h1>
+                <h1 className="h1">Court St Schedule</h1>
             <div className="calendar">
                 <Calendar className="styleCal" onClickDay={this.dayClicked}/>   
                 {this.showForm()}

@@ -31,17 +31,13 @@ export default class BookingHistory extends Component {
     loadBookingHistoryCards = () => {
         console.log(this.state.pastBookings)
         let bookings = this.state.pastBookings.map( booking => {
-            return <BookingHistoryCard key={booking.id}/>
+            return <BookingHistoryCard key={booking.id} booking={booking}/>
         })
 
         return bookings
     }
 
     render() {
-
-        const bookings = this.state.pastBookings.map( booking => {
-            return <BookingHistoryCard key={booking.id}/>
-        })
         return(
             <div>
                 <div className="booking-history-heading">
