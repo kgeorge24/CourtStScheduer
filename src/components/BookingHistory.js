@@ -46,7 +46,7 @@ export default class BookingHistory extends Component {
             <div>
                 <div className="booking-history-heading">
                     <h3>Number Of Sessions Booked</h3>
-                    <h2>5</h2>
+                    <h2>{this.state.pastBookings.length}</h2>
                 </div>
 
                 <div className="booking-history-page">

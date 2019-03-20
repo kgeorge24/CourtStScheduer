@@ -8,7 +8,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { withRouter } from 'react-router-dom'
 import BookingHistory from './components/BookingHistory';
-
+import { slide as Menu } from 'react-burger-menu'
 
 class App extends Component {
   state = {
@@ -94,9 +94,21 @@ class App extends Component {
     })
   }
 
+
+  clickHandler = () => {
+    localStorage.clear()
+    this.props.history.push('/')
+  }
+
+
   render() {
     return (
        <div className="App">
+       <Menu>
+        <a id="home" className="menu-item" href="/calendar">Calendar</a>
+        <a id="about" className="menu-item" href="/booking-history">Booking History</a>
+        <a className="menu-item" onClick={this.clickHandler}>Logout</a>
+       </Menu>
        <Switch>
          <Route exact path="/" component={LandingPage} />
          <Route path="/login" render={() => (<Login loginHandler={this.loginHandler} error={this.state.errorMessage}/>)}/>

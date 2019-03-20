@@ -30,7 +30,9 @@ export default class Schedule extends Component {
         
         if(token){
             return <div>
-                <Nav />
+                <br></br>
+                <br></br>
+                <br></br>
                 <h1 class="h1">Court St Schedule</h1>
             <div className="calendar">
                 <Calendar className="styleCal" onClickDay={this.dayClicked}/>   
