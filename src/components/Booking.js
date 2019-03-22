@@ -5,7 +5,9 @@ export default class Booking extends Component {
         start: "9am",
         finish: "",
         dateData: {},
-        bookingTimesToRemove: []
+        bookingTimesToRemove: [],
+        clicked: false,
+        hoursBooked: 0
 
     }
 
@@ -156,7 +158,7 @@ export default class Booking extends Component {
         let times = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm","11pm", "12am", "1am"]
 
         let { start, finish } = this.state
-        let timeRange = []
+        let timeRange = [4, 6]
         let token = localStorage.getItem('token')
 
         times.forEach( (time, index) => {
@@ -166,6 +168,8 @@ export default class Booking extends Component {
         })
         
         let allTimes = times.slice(timeRange[0], timeRange[1] + 1)
+
+        // this.setState({ hoursBooked: allTimes.length })
 
         if (allTimes.length < 3){
             console.log("Please book sessions in 2hr blocks or more")
@@ -188,6 +192,7 @@ export default class Booking extends Component {
                 .then( json => console.log)
             })
         } 
+        this.props.history.push('/calendar')
     }   
 
 
@@ -219,7 +224,30 @@ export default class Booking extends Component {
 
     // saves time selected for booking times in state.
     changeHandler = (e) => {
-        this.setState({ [e.target.name]: e.target.value}, () => console.log(this.state))
+        this.setState({ [e.target.name]: e.target.value}, () => this.calculateDeposit())
+    }
+
+    calculateDeposit = () => {
+        let times = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm","11pm", "12am", "1am"]
+
+        let { start, finish } = this.state
+        let timeRange = []
+        let token = localStorage.getItem('token')
+
+        times.forEach( (time, index) => {
+            if (time === start){ timeRange.push(index)}
+
+            if (time === finish){ timeRange.push(index)}
+        })
+        
+        let allTimes = times.slice(timeRange[0], timeRange[1] + 1)
+
+        this.setState({ hoursBooked: allTimes.length - 1 })
+    }
+
+
+    clickedBook = () => {
+        this.setState({ clicked: true })
     }
 
 
@@ -246,8 +274,8 @@ export default class Booking extends Component {
                     </select>
                 </div>
                 <div className='booking-button-area'>
-                    <p>A Deposit of $12 is Required</p>
-                    <button className="calendar-button">Book</button>
+                    <p>A Deposit of <span id="red">${this.state.hoursBooked * 20}</span> is <span id="red">Required</span></p>
+                    <button className="calendar-button" onClick={this.clickedBook}>Book</button>
                 </div>
                 </form>
             </div>

@@ -76,13 +76,16 @@
   display: block;
   justify-content: center;
   text-align: center;
-  width: 24vw;
+  width: 34vw;
   margin-top: 10vh;
   color: white;
   /* border: 2px solid white; */
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.5vw;
+  margin-left: -5vw;
+  text-shadow: 10px 8px 30px;
 }
+
 
 /* .calendar-form input {
   margin: 1vw;
@@ -131,7 +134,9 @@ a:visited {
   color: red;
 } */
 
-
+#red {
+  color: red;
+}
 
 .landingPage-heading {
   font-size: 8vw;
@@ -365,10 +370,25 @@ button {
   /* height: 15vh; */
 }
 
+.booking-conformation {
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 11.5vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  font-size: 1.3vw;
+}
 /* Hamburger Menu */
 
 .menu-item {
   color: black;
+  margin: 1vw;
+  text-decoration: none;
+  outline: none;
+}
+
+.red-menu-item {
+  color: red;
   margin: 1vw;
   text-decoration: none;
   outline: none;
@@ -423,6 +443,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-morph-shape {
   fill: #373a47;
 }
+
 
 /* Wrapper for item list */
 .bm-item-list {
