@@ -70,30 +70,7 @@ export default class Booking extends Component {
     // When User Submits Booking And Is Satisfied With The Date.
     submitHandler = (e) => {
         e.preventDefault()
-        let token = localStorage.getItem('token')
-        let bookingTime = this.state.start + " to " + this.state.finish
 
-        fetch('http://localhost:3000/booking',{
-            method: 'POST',
-            headers: {
-                'Content-Type': "application/json",
-                Accept: "application/json",
-                'Authorization': token
-            },
-            body: JSON.stringify({
-                user_id: this.props.location.state.user.id,
-                date: this.props.location.state.day,
-                time: bookingTime
-            })
-        })
-        .then( res => res.json())
-        .then(() => {this.yesHandler()})
-
-    }
-
-
-    yesHandler = () => {
-        
         let token = localStorage.getItem('token')
         
         fetch('http://localhost:3000/day', {
@@ -134,9 +111,29 @@ export default class Booking extends Component {
         })
     }
 
+    createUserBooking = () => {
+        console.log('...Creating User Booking')
+        let token = localStorage.getItem('token')
+        let bookingTime = this.state.start + " to " + this.state.finish
+
+        fetch('http://localhost:3000/booking',{
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json",
+                Accept: "application/json",
+                'Authorization': token
+            },
+            body: JSON.stringify({
+                user_id: this.props.location.state.user.id,
+                date: this.props.location.state.day,
+                time: bookingTime
+            })
+        })
+        .then( res => res.json())
+        .then(() => console.log)
+    }
 
     createDay = () => {
-
         let token = localStorage.getItem('token')
         
         fetch('http://localhost:3000/day', {
@@ -158,8 +155,7 @@ export default class Booking extends Component {
         let times = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm","11pm", "12am", "1am"]
 
         let { start, finish } = this.state
-        let timeRange = [4, 6]
-        let token = localStorage.getItem('token')
+        let timeRange = []
 
         times.forEach( (time, index) => {
             if (time === start){ timeRange.push(index)}
@@ -168,32 +164,50 @@ export default class Booking extends Component {
         })
         
         let allTimes = times.slice(timeRange[0], timeRange[1] + 1)
-
-        // this.setState({ hoursBooked: allTimes.length })
-
+        console.log(allTimes)
         if (allTimes.length < 3){
             console.log("Please book sessions in 2hr blocks or more")
         }else if (allTimes.length >= 3){
+            let cantBook = false
+
             allTimes.forEach( time => {
-                console.log(`Creating ${time} in backend`)
-                fetch('http://localhost:3000/booking_time', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': "application/json",
-                        'Accepts': "application/json",
-                        Authorization: token
-                    }, 
-                    body: JSON.stringify({
-                        available: false,
-                        name: time,
-                        day_id: json.id
-                    })
-                }).then( res => res.json())
-                .then( json => console.log)
+                if(this.state.bookingTimesToRemove.includes(time)) {
+                    cantBook = true
+                }
             })
+
+            if(cantBook === false) { 
+                this.saveBookingTimeToBackend(allTimes, json)
+                this.createUserBooking()
+            }else{
+                console.log('cannot book. those times are taken')
+            }
         } 
         this.props.history.push('/calendar')
     }   
+
+    saveBookingTimeToBackend = (allTimes, json) => {
+        console.log('...Saving Booking To Backend')
+        let token = localStorage.getItem('token')
+
+        allTimes.forEach( time => {
+            console.log(`Creating ${time} in backend`)
+            fetch('http://localhost:3000/booking_time', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': "application/json",
+                    'Accepts': "application/json",
+                    Authorization: token
+                }, 
+                body: JSON.stringify({
+                    available: false,
+                    name: time,
+                    day_id: json.id
+                })
+            }).then( res => res.json())
+            .then( json => console.log)
+        })
+    }
 
 
     availableBookingTimes = () => {
@@ -232,7 +246,6 @@ export default class Booking extends Component {
 
         let { start, finish } = this.state
         let timeRange = []
-        let token = localStorage.getItem('token')
 
         times.forEach( (time, index) => {
             if (time === start){ timeRange.push(index)}
