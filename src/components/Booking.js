@@ -7,7 +7,8 @@ export default class Booking extends Component {
         dateData: {},
         bookingTimesToRemove: [],
         clicked: false,
-        hoursBooked: 0
+        hoursBooked: 0,
+        show: false
 
     }
 
@@ -179,12 +180,18 @@ export default class Booking extends Component {
             if(cantBook === false) { 
                 this.saveBookingTimeToBackend(allTimes, json)
                 this.createUserBooking()
+                this.setState({ show: true })
+                console.log('were gunna do it')
+                setTimeout(this.pushToCalendar, 5000)
             }else{
                 console.log('cannot book. those times are taken')
             }
         } 
-        this.props.history.push('/calendar')
     }   
+
+    pushToCalendar = () => {
+        this.props.history.push('/calendar')
+    }
 
     saveBookingTimeToBackend = (allTimes, json) => {
         console.log('...Saving Booking To Backend')
@@ -263,6 +270,15 @@ export default class Booking extends Component {
         this.setState({ clicked: true })
     }
 
+    showBookingConfrim = () => {
+        if(this.state.show === true ) {
+
+            return <div className="booking-confirm">
+                    <p>You will recieve a text message when Court responds to your request.</p>
+                </div>
+        }
+    }
+
 
     render(){
         return(
@@ -292,6 +308,7 @@ export default class Booking extends Component {
                 </div>
                 </form>
             </div>
+            {this.showBookingConfrim()}
             </div>
         );
     };
