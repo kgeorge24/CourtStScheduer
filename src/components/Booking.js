@@ -8,7 +8,8 @@ export default class Booking extends Component {
         bookingTimesToRemove: [],
         clicked: false,
         hoursBooked: 0,
-        show: false
+        show: false,
+        overLappingTime: false
 
     }
 
@@ -185,6 +186,7 @@ export default class Booking extends Component {
                 setTimeout(this.pushToCalendar, 5000)
             }else{
                 console.log('cannot book. those times are taken')
+                this.setState({ overLappingTime: true })
             }
         } 
     }   
@@ -270,12 +272,17 @@ export default class Booking extends Component {
         this.setState({ clicked: true })
     }
 
-    showBookingConfrim = () => {
+    showBookingStatus = () => {
         if(this.state.show === true ) {
-
             return <div className="booking-confirm">
                     <p>You will recieve a text message when Court responds to your request.</p>
                 </div>
+        }
+
+        if(this.state.overLappingTime === true) {
+            return <div className="booking-confirm">
+                    <p>This session is overlaps another. Please choose a different time.</p>
+            </div>
         }
     }
 
@@ -308,7 +315,7 @@ export default class Booking extends Component {
                 </div>
                 </form>
             </div>
-            {this.showBookingConfrim()}
+            {this.showBookingStatus()}
             </div>
         );
     };
