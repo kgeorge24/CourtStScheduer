@@ -486,11 +486,32 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
-.help-form {
+.help-form-page {
   /* border: 2px solid white; */
-  height: 100vw;
   display: flex;
+  height: 100vw;
+  width: 100vw;
+  align-items: center;
   justify-content: center;
-  margin-top: 40vh;
-  
+}
+
+.help-form {
+  /* display: flex; */
+
+}
+
+.input {
+  width: 22vw;
+  height: 5vh;
+  margin: 1vw;
+}
+
+.textarea {
+  width: 22vw;
+  height: 15vh;
+  margin: 1vw;
+}
+
+.submit {
+  width: 15vw;
 }
