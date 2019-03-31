@@ -9,6 +9,7 @@ import Register from './components/Register';
 import { withRouter } from 'react-router-dom'
 import BookingHistory from './components/BookingHistory';
 import { slide as Menu } from 'react-burger-menu'
+import Help from './components/Help'
 
 class App extends Component {
   state = {
@@ -143,6 +144,7 @@ class App extends Component {
          <Route path="/register" render={() => (<Register submitHandler={this.submitHandler}/>)}/>
          <Route path="/calendar" render={() => (<Schedule user={this.state.user}/>)} />
          <Route path="/booking" component={Booking}/>
+         <Route path="/help" component={Help}/>
          <Route path="/booking-history" render={() => (<BookingHistory user={this.state.user} pastBookings={this.state.pastBookings}/>)} />
        </Switch>
        </div>

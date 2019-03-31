@@ -246,7 +246,7 @@ a:visited {
   color: white;
   text-align: center;
   padding: 3vw;
-  border-bottom: 2px solid rgb(214, 213, 213);
+  /* border-bottom: 2px solid rgb(214, 213, 213); */
   line-height: 2.0;
 }
 
@@ -486,3 +486,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
+.help-form {
+  /* border: 2px solid white; */
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 40vh;
+  
+}
