@@ -504,14 +504,20 @@ Note: Beware of modifying this element as it can break the animations - you shou
   width: 22vw;
   height: 5vh;
   margin: 1vw;
+  font-size: 1.4vw;
+  text-align: center;
 }
 
 .textarea {
   width: 22vw;
   height: 15vh;
   margin: 1vw;
+  font-size: 1.3vw;
+  padding: .5vw;
 }
 
 .submit {
-  width: 15vw;
+  width: 10vw;
+  height: 5vh;
+  border-radius: .5vw;
 }
