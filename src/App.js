@@ -135,7 +135,7 @@ class App extends Component {
        <Menu>
         <a id="home" className="menu-item" href="/calendar">Calendar</a>
         <a id="about" className="menu-item" href="/booking-history">Booking History</a>
-        <a id="help" className="menu-item" href="/help">Help</a>
+        <a id="help" className="menu-item" href="/help">Report An Issue</a>
         <a className="red-menu-item" href='/' onClick={this.clickHandler}>Logout</a>
        </Menu>
        <Switch>
