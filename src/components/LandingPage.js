@@ -11,7 +11,7 @@ export default class LandingPage extends Component {
     render() {
         return(
             <div className="landing-background">
-                <h1 className="landingPage-heading">Courst St Schedule</h1>
+                <h1 className="landingPage-heading">Court St. Scheduler</h1>
                 <Link to={{ pathname: this.whichPage()}}><button className="landing-button">Get Started</button></Link>
             </div>
         );
