@@ -24,7 +24,7 @@ class App extends Component {
     if (token) {
       // console.log('token is here')
       // Must add fetch here for current user.
-      fetch('http://localhost:3000/current_user', {
+      fetch('https://git.heroku.com/court-st-api.git/current_user', {
         headers: {
           'Content-Type': 'application/json',
           Accepts: 'application/json',
@@ -44,7 +44,7 @@ class App extends Component {
   submitHandler = (e, formInfo) => {
     e.preventDefault()
 
-    fetch('http://localhost:3000/users', {
+    fetch('https://git.heroku.com/court-st-api.git/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -78,11 +78,12 @@ class App extends Component {
     e.preventDefault()
     console.log('im reaching')
 
-    fetch('http://localhost:3000/login', {
+    fetch('https://git.heroku.com/court-st-api.git/login', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
-        Accepts: 'application/json'
+        Accepts: 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({
         email: formInfo.email,
@@ -109,11 +110,12 @@ class App extends Component {
   savePastBookingsToState = () => {
     let token = localStorage.getItem('token')
 
-    fetch('http://localhost:3000/booking', {
+    fetch('https://git.heroku.com/court-st-api.git/booking', {
       headers: {
         'Content-Type': 'application/json',
         Accepts: 'application/json',
-        Authorization: token
+        Authorization: token,
+        'Access-Control-Allow-Origin': '*'
       }
     })
       .then(res => res.json())

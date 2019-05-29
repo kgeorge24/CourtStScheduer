@@ -19,7 +19,8 @@ export default class Booking extends Component {
       headers: {
         'Content-Type': 'application/json',
         Accepts: 'application/json',
-        Authorization: token
+        Authorization: token,
+        'Access-Control-Allow-Origin': '*'
       }
     })
       .then(res => res.json())
@@ -40,7 +41,8 @@ export default class Booking extends Component {
               headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json',
-                Authorization: token
+                Authorization: token,
+                'Access-Control-Allow-Origin': '*'
               }
             })
               .then(res => res.json())
@@ -75,7 +77,8 @@ export default class Booking extends Component {
       headers: {
         'Content-Type': 'application/json',
         Accepts: 'application/json',
-        Authorization: token
+        Authorization: token,
+        'Access-Control-Allow-Origin': '*'
       }
     })
       .then(res => res.json())
@@ -95,7 +98,8 @@ export default class Booking extends Component {
             headers: {
               'Content-Type': 'application/json',
               Accepts: 'application/json',
-              Authorization: token
+              Authorization: token,
+              'Access-Control-Allow-Origin': '*'
             }
           })
             .then(res => res.json())
@@ -121,7 +125,8 @@ export default class Booking extends Component {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        Authorization: token
+        Authorization: token,
+        'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({
         user_id: this.props.location.state.user.id,
@@ -141,7 +146,8 @@ export default class Booking extends Component {
       headers: {
         'Content-Type': 'application/json',
         Accepts: 'application/json',
-        Authorization: token
+        Authorization: token,
+        'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({
         date: this.props.location.state.day
@@ -222,7 +228,8 @@ export default class Booking extends Component {
         headers: {
           'Content-Type': 'application/json',
           Accepts: 'application/json',
-          Authorization: token
+          Authorization: token,
+          'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
           available: false,
