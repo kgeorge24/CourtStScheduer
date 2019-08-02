@@ -1,0 +1,82 @@
+.h1 {
+	color: white;
+	text-align: center;
+	font-family: "Catamaran", sans-serif;
+	font-size: 2vw;
+	padding: 1vw;
+	margin-top: -4vh;
+}
+
+.schedule {
+	margin: 0 auto;
+	width: 34vw;
+}
+
+.calendar {
+	display: flex;
+	justify-content: center;
+	margin-top: 12vh;
+	animation: moveLeft 1s ease-out;
+}
+
+.react-calendar {
+	max-width: 100% !important;
+	width: 25% !important;
+}
+
+.calendar-form {
+	margin: 0 auto;
+	display: block;
+	justify-content: center;
+	text-align: center;
+	width: 34vw;
+	margin-top: 10vh;
+	color: white;
+	/* border: 2px solid white; */
+	font-family: "Open Sans Condensed", sans-serif;
+	font-size: 1.5vw;
+	text-shadow: 10px 8px 30px;
+}
+
+@keyframes moveLeft {
+	0% {
+		margin-top: -50vh;
+	}
+
+	50% {
+		margin-top: 15vh;
+	}
+
+	75% {
+		margin-top: 7vh;
+	}
+
+	100% {
+		margin-top: 12vh;
+	}
+}
+
+.calendar-button-div {
+	display: inline-block;
+}
+
+.calendar-button {
+	margin: 1vw;
+	width: 17vw;
+	height: 5vh;
+	border-radius: 1rem;
+	font-size: 1vw;
+	background-color: rgb(246, 242, 242);
+	margin-top: 5vh;
+	animation: shadow-pulse 1s infinite;
+	/* animation: moveLeft 1s ease-out; */
+}
+
+@keyframes shadow-pulse {
+	0% {
+		box-shadow: 0 0 0 0px rgba(241, 240, 240, 0.26);
+	}
+	100% {
+		box-shadow: 0 0 0 20px rgba(243, 243, 243, 0);
+	}
+}

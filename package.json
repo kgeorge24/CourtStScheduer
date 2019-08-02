@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "^16.7.0",
-    "react-burger-menu": "^2.6.5",
+    "react-burger-menu": "^2.6.10",
+    "react-calendar": "^2.19.0",
     "react-dom": "^16.7.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.2"
   },
   "scripts": {
