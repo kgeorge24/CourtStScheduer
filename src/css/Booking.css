@@ -1,0 +1,44 @@
+.form-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.booking-form {
+	background-color: white;
+	height: 35vh;
+	width: 30vw;
+	border-radius: 0.2vw;
+}
+
+.x-button {
+	/* border: 1px solid grey; */
+	float: right;
+	font-size: 1.2vw;
+	color: black;
+	padding: 0.4vw;
+
+	background-color: transparent;
+}
+
+.heading {
+	display: block;
+	font-size: 1vw;
+	clear: both;
+	text-align: center;
+}
+
+.time-frame {
+	/* border: 2px solid black; */
+	text-align: center;
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.booking-button-area {
+	text-align: center;
+}

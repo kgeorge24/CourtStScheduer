@@ -1,0 +1,22 @@
+.booking-history-heading {
+  color: white;
+  text-align: center;
+  padding: 3vw;
+  /* border-bottom: 2px solid rgb(214, 213, 213); */
+  line-height: 2;
+}
+
+.booking-history-page {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid rgb(187, 185, 185);
+  border-top: 60px solid rgb(221, 221, 221);
+  border-radius: 0.3vw;
+  width: 34vw;
+  margin: 0 auto;
+  overflow: scroll;
+  height: 60vh;
+  background-color: white;
+}
